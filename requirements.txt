@@ -1,0 +1,9 @@
+fastapi
+paddlepaddle-gpu
+python-dotenv
+tenacity
+tiktoken
+toml
+unstructured.PaddleOCR
+unstructured[all-docs]
+uvicorn[standard]
