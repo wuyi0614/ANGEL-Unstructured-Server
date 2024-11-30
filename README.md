@@ -35,3 +35,14 @@ Test Cuda (optional):
 
 ```bash
 nvidia-smi
+```
+
+Start Server:
+
+```bash
+uvicorn src.main:app --port 7778
+
+# run in background
+nohup uvicorn src.main:app --port 7778 > uvicorn.log 2>&1 &
+
+```
