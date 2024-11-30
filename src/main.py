@@ -2,12 +2,10 @@ from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from fastapi.staticfiles import StaticFiles
-from starlette.middleware.sessions import SessionMiddleware
 
 from src.config.config import (
     FASTAPI_AUTH,
     FASTAPI_BEARER_TOKEN,
-    FASTAPI_MIDDLEWARE_SECRECT_KEY,
 )
 from src.routers import health_router
 
@@ -38,3 +36,5 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(health_router.router)
