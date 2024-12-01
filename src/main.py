@@ -7,7 +7,7 @@ from src.config.config import (
     FASTAPI_AUTH,
     FASTAPI_BEARER_TOKEN,
 )
-from src.routers import health_router
+from src.routers import health_router, pdf_router
 
 bearer_scheme = HTTPBearer()
 
@@ -38,3 +38,4 @@ app.add_middleware(
 )
 
 app.include_router(health_router.router)
+app.include_router(pdf_router.router)
