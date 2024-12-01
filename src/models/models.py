@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Tuple
 
 from pydantic import BaseModel
 
@@ -9,8 +9,9 @@ class TextElement(BaseModel):
 
 
 class Response(BaseModel):
-    text_list: List[TextElement]
+    result: List[TextElement]
 
-
-class tempPathRequest(BaseModel):
-    tmp_path: str
+    @classmethod
+    def from_result(cls, result: List[Tuple[str, int]]):
+        items = [TextElement(text=item[0], page_number=item[1]) for item in result]
+        return cls(result=items)
