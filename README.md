@@ -24,7 +24,7 @@ pip install -r requirements.txt --upgrade
 
 ```bash
 sudo apt update
-sudo apt install python3.11-dev
+
 sudo apt install -y libmagic-dev
 sudo apt install -y poppler-utils
 sudo apt install -y libreoffice
