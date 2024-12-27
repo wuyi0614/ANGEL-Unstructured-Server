@@ -34,7 +34,7 @@ sudo apt install -y pandoc
 Test Cuda (optional):
 
 ```bash
-nvidia-smi
+watch -n 1 nvidia-smi
 ```
 
 Start Server:
