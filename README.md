@@ -40,17 +40,17 @@ watch -n 1 nvidia-smi
 Start Server:
 
 ```bash
-uvicorn src.main:app --port 7770
+uvicorn src.main:app --host 0.0.0.0 --port 7770
 
-CUDA_VISIBLE_DEVICES=0 uvicorn src.main:app --port 7770
-CUDA_VISIBLE_DEVICES=1 uvicorn src.main:app --port 7771
-CUDA_VISIBLE_DEVICES=2 uvicorn src.main:app --port 7772
+CUDA_VISIBLE_DEVICES=0 uvicorn src.main:app --host 0.0.0.0 --port 7770
+CUDA_VISIBLE_DEVICES=1 uvicorn src.main:app --host 0.0.0.0 --port 7771
+CUDA_VISIBLE_DEVICES=2 uvicorn src.main:app --host 0.0.0.0 --port 7772
 
 # run in background
-nohup uvicorn src.main:app --port 7770 > uvicorn.log 2>&1 &
+nohup uvicorn src.main:app --host 0.0.0.0 --port 7770 > uvicorn.log 2>&1 &
 
-nohup CUDA_VISIBLE_DEVICES=0 uvicorn src.main:app --port 7770 > uvicorn.log 2>&1 &
-nohup CUDA_VISIBLE_DEVICES=1 uvicorn src.main:app --port 7771 > uvicorn.log 2>&1 &
-nohup CUDA_VISIBLE_DEVICES=2 uvicorn src.main:app --port 7772 > uvicorn.log 2>&1 &
+nohup CUDA_VISIBLE_DEVICES=0 uvicorn src.main:app --host 0.0.0.0 --port 7770 > uvicorn.log 2>&1 &
+nohup CUDA_VISIBLE_DEVICES=1 uvicorn src.main:app --host 0.0.0.0 --port 7771 > uvicorn.log 2>&1 &
+nohup CUDA_VISIBLE_DEVICES=2 uvicorn src.main:app --host 0.0.0.0 --port 7772 > uvicorn.log 2>&1 &
 
 ```
