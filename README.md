@@ -29,6 +29,7 @@ sudo apt install -y libmagic-dev
 sudo apt install -y poppler-utils
 sudo apt install -y libreoffice
 sudo apt install -y pandoc
+sudo apt install -y graphicsmagick
 ```
 
 Test Cuda (optional):

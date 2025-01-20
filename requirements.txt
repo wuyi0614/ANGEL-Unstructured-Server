@@ -1,6 +1,7 @@
 fastapi
 openai
 paddlepaddle-gpu
+pdf2image
 python-dotenv
 py-zerox
 tenacity

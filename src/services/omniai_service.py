@@ -7,7 +7,7 @@ os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 
 # Define main async entrypoint
-async def omniai(file_path):
+async def omniai_service(file_path):
     result = await zerox(
         file_path=file_path,
         model="gpt-4o-mini",

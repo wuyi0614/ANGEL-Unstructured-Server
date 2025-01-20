@@ -9,7 +9,7 @@ router = APIRouter()
 
 
 @router.post(
-    "/pdf",
+    "/word",
     response_model=Response,
     response_description="List of chunks with page numbers.",
 )
