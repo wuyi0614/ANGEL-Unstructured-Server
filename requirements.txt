@@ -2,6 +2,7 @@ fastapi
 openai
 paddlepaddle-gpu
 python-dotenv
+py-zerox
 tenacity
 tiktoken
 toml

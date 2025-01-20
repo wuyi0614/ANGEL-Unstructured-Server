@@ -5,7 +5,7 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from fastapi.staticfiles import StaticFiles
 
 from src.config.config import FASTAPI_AUTH, FASTAPI_BEARER_TOKEN
-from src.routers import health_router, pdf_router, word_router
+from src.routers import health_router, pdf_router, word_router, pdf_omniai_router
 
 load_dotenv()
 
@@ -39,4 +39,5 @@ app.add_middleware(
 
 app.include_router(health_router.router)
 app.include_router(pdf_router.router)
+app.include_router(pdf_omniai_router.router)
 app.include_router(word_router.router)

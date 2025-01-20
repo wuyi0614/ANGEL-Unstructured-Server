@@ -13,7 +13,7 @@
                 "src.main:app",
                 "--reload",
                 "--port",
-                "7770"
+                "8770"
             ],
             "jinja": true,
             "justMyCode": true,
