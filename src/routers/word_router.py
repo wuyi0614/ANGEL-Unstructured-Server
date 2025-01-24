@@ -2,7 +2,7 @@ import tempfile
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
 
-from src.models.models import Response
+from src.models.models import ResponseWithoutPageNum
 from src.services.word_service import unstructure_word
 
 router = APIRouter()
@@ -10,7 +10,7 @@ router = APIRouter()
 
 @router.post(
     "/word",
-    response_model=Response,
+    response_model=ResponseWithoutPageNum,
     response_description="List of chunks.",
 )
 async def word(file: UploadFile = File(...)):
@@ -24,6 +24,6 @@ async def word(file: UploadFile = File(...)):
 
         try:
             result = unstructure_word(tmp_path)
-            return Response.from_result(result)
+            return ResponseWithoutPageNum.from_result(result)
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))

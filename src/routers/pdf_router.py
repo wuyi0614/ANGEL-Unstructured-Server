@@ -2,7 +2,7 @@ import tempfile
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
 
-from src.models.models import Response
+from src.models.models import ResponseWithPageNum
 from src.services.pdf_service import unstructure_pdf
 
 router = APIRouter()
@@ -10,7 +10,7 @@ router = APIRouter()
 
 @router.post(
     "/pdf",
-    response_model=Response,
+    response_model=ResponseWithPageNum,
     response_description="List of chunks with page numbers.",
 )
 async def pdf(file: UploadFile = File(...)):
@@ -24,6 +24,6 @@ async def pdf(file: UploadFile = File(...)):
 
         try:
             result = unstructure_pdf(tmp_path)
-            return Response.from_result(result)
+            return ResponseWithPageNum.from_result(result)
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))

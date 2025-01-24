@@ -3,15 +3,24 @@ from typing import List, Optional, Tuple
 from pydantic import BaseModel, Field
 
 
-class TextElement(BaseModel):
+class TextElementWithPageNum(BaseModel):
     text: str
-    page_number: Optional[int] = Field(default=None, exclude=True)
-
-
-class Response(BaseModel):
-    result: List[TextElement]
+    page_number: int
+class ResponseWithPageNum(BaseModel):
+    result: List[TextElementWithPageNum]
 
     @classmethod
-    def from_result(cls, result: List[Tuple[str, Optional[int]]]):
-        items = [TextElement(text=item[0], page_number=item[1] if item[1] is not None else None) for item in result]
+    def from_result(cls, result: List[Tuple[str, int]]):
+        items = [TextElementWithPageNum(text=item[0], page_number=item[1]) for item in result]
+        return cls(result=items)
+
+class TextElementWithoutPageNum(BaseModel):
+    text: str
+
+class ResponseWithoutPageNum(BaseModel):
+    result: List[TextElementWithoutPageNum]
+
+    @classmethod
+    def from_result(cls, result: List[Tuple[str, int]]):
+        items = [TextElementWithoutPageNum(text=item) for item in result]
         return cls(result=items)

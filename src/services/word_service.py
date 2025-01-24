@@ -43,18 +43,16 @@ def unstructure_word(word_name):
         else:
             if title_buffer:
                 merged_title = "\n".join(title_buffer)
-                merged_list.append((merged_title + "\n" + text, None))
+                merged_list.append(merged_title + "\n" + text)
                 title_buffer = []
             else:
-                merged_list.append((text, None))
+                merged_list.append(text)
 
     if title_buffer:
         if merged_list:
             last_text, _ = merged_list[-1]
-            merged_list[-1] = (last_text + "\n" + "\n".join(title_buffer), None)
+            merged_list[-1] = (last_text + "\n" + "\n".join(title_buffer))
         else:
-            merged_list.append(("\n".join(title_buffer), None))
+            merged_list.append("\n".join(title_buffer))
     
-
-
     return merged_list
