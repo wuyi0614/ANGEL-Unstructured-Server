@@ -1,7 +1,9 @@
 import os
+
 from pyzerox import zerox
 
 from src.config.config import OPENAI_API_KEY
+from src.models.models import Response, TextElement
 
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
@@ -14,4 +16,10 @@ async def omniai_service(file_path):
         # maintain_format=True,
         # output_dir=output_dir,
     )
-    return result
+    response = Response(
+        result=[
+            TextElement(text=page.content, page_number=page.page)
+            for page in result.pages
+        ]
+    )
+    return response

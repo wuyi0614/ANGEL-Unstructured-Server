@@ -2,7 +2,7 @@ import tempfile
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
 
-from pyzerox.core.types import ZeroxOutput
+from src.models.models import Response
 from src.services.omniai_service import omniai_service
 
 router = APIRouter()
@@ -10,7 +10,7 @@ router = APIRouter()
 
 @router.post(
     "/omniai",
-    response_model=ZeroxOutput,
+    response_model=Response,
     response_description="List of chunks with page numbers.",
 )
 async def omniai(file: UploadFile = File(...)):
