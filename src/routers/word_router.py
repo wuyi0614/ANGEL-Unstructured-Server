@@ -11,7 +11,7 @@ router = APIRouter()
 @router.post(
     "/word",
     response_model=Response,
-    response_description="List of chunks with page numbers.",
+    response_description="List of chunks.",
 )
 async def word(file: UploadFile = File(...)):
     """
