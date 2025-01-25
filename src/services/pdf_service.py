@@ -16,12 +16,12 @@ from unstructured.partition.pdf import partition_pdf
 load_dotenv()
 
 
-def unstructure_pdf(pdf_name, languages=["chi_sim"], extract_images=False):
+def unstructure_pdf(file_name, languages=["chi_sim"], extract_images=False):
     min_image_width = 250
     min_image_height = 270
 
     elements = partition_pdf(
-        filename=pdf_name,
+        filename=file_name,
         pdf_extract_images=extract_images,
         pdf_image_output_dir_path=tempfile.gettempdir(),
         strategy="hi_res",

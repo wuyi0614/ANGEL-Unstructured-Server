@@ -3,17 +3,17 @@ import tempfile
 from fastapi import APIRouter, File, HTTPException, UploadFile
 
 from src.models.models import ResponseWithoutPageNum
-from src.services.word_service import unstructure_word
+from src.services.docx_service import unstructure_docx
 
 router = APIRouter()
 
 
 @router.post(
-    "/word",
+    "/docx",
     response_model=ResponseWithoutPageNum,
     response_description="List of chunks.",
 )
-async def word(file: UploadFile = File(...)):
+async def docx(file: UploadFile = File(...)):
     """
     This endpoint allows you to extract text from a PDF document.
     It takes a PDF file as input and returns a list of chunks with page numbers.
@@ -23,7 +23,7 @@ async def word(file: UploadFile = File(...)):
         tmp_path = tmp.name
 
         try:
-            result = unstructure_word(tmp_path)
+            result = unstructure_docx(tmp_path)
             return ResponseWithoutPageNum.from_result(result)
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))

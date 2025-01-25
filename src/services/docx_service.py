@@ -3,9 +3,9 @@ from unstructured.chunking.title import chunk_by_title
 from unstructured.documents.elements import CompositeElement, Table
 
 
-def unstructure_word(word_name):
+def unstructure_docx(file_name):
     elements = partition_docx(
-        filename=word_name,
+        filename=file_name,
         multipage_sections=True,
         infer_table_structure=True,
         include_page_breaks=False,
