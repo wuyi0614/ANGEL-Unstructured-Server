@@ -2,7 +2,6 @@ from pptx import Presentation
 from unstructured.partition.pptx import partition_pptx
 
 
-
 def unstructure_ppt(file_name):
     prs = Presentation(file_name)
     elements = partition_pptx(
@@ -36,7 +35,7 @@ def unstructure_ppt(file_name):
 
         combined_text = f"{slide_text.strip()}\n\n{notes_text.strip()}\n\n{' '.join(element_text)}"
 
-        page_number = i + 1 
+        page_number = i + 1
         text_list.append((combined_text, page_number))
 
     return text_list

@@ -22,6 +22,12 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip install -r requirements.txt --upgrade
 ```
 
+Auto lint:
+```bash
+pip install black
+black .
+```
+
 ```bash
 sudo apt update
 
