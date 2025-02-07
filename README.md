@@ -59,5 +59,4 @@ nohup uvicorn src.main:app --host 0.0.0.0 --port 7770 > uvicorn.log 2>&1 &
 nohup env CUDA_VISIBLE_DEVICES=0 uvicorn src.main:app --host 0.0.0.0 --port 7770 > uvicorn.log 2>&1 &
 nohup env CUDA_VISIBLE_DEVICES=1 uvicorn src.main:app --host 0.0.0.0 --port 7771 > uvicorn.log 2>&1 &
 nohup env CUDA_VISIBLE_DEVICES=2 uvicorn src.main:app --host 0.0.0.0 --port 7772 > uvicorn.log 2>&1 &
-
 ```
