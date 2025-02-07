@@ -1,6 +1,6 @@
-from typing import List, Optional, Tuple
+from typing import List, Tuple
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 
 class TextElementWithPageNum(BaseModel):
