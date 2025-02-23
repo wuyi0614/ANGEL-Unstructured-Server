@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+openai = "*"
+pdf2image = "*"
+python-dotenv = "*"
+py-zerox = "*"
+tenacity = "*"
+tiktoken = "*"
+toml = "*"
+"unstructured.paddleocr" = "*"
+unstructured = {extras = ["all-docs"], version = "*"}
+uvicorn = {extras = ["standard"], version = "*"}
+black = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"

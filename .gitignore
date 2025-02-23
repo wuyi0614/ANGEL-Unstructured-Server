@@ -1,5 +1,10 @@
+# credential files
+*-local
+*-local.*
+
 # OS generated files #
-######################
+.idea/
+.vscode
 .DS_Store
 .DS_Store?
 .Spotlight-V100
