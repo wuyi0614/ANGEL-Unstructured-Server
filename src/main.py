@@ -20,9 +20,9 @@ def validate_token(credentials: HTTPAuthorizationCredentials = Depends(bearer_sc
 
 
 app = FastAPI(
-    title="TianGong AI Unstructure Serve",
+    title="ANGEL-NTU Unstructured Server",
     version="1.0",
-    description="TianGong AI Unstructure API Server",
+    description="ANGEL-NTU Unstructured API Server",
     dependencies=[Depends(validate_token)] if FASTAPI_AUTH else None,
 )
 

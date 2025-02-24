@@ -1,6 +1,9 @@
 import toml
 
-config = toml.load("config/secrets-local.toml")
+from pathlib import Path
+
+conf_file = Path() / 'src' / 'config' / 'secrets-local.toml'
+config = toml.load(str(conf_file))
 
 FASTAPI_AUTH = config["FASTAPI"]["AUTH"]
 FASTAPI_BEARER_TOKEN = config["FASTAPI"]["BEARER_TOKEN"]

@@ -1,8 +1,10 @@
 # credential files
 *-local
 *-local.*
+*.tar.gz
 
 # OS generated files #
+.pytest*
 .idea/
 .vscode
 .DS_Store

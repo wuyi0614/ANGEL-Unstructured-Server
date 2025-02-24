@@ -4,20 +4,25 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = "*"
+# NLP & LLMs middlewares
 openai = "*"
+"unstructured.paddleocr" = "*"
+unstructured = {extras = ["all-docs"], version = "*"}
+huggingface-hub = "*"
+
+# webui dev
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+
+# utils
 pdf2image = "*"
 python-dotenv = "*"
 py-zerox = "*"
 tenacity = "*"
 tiktoken = "*"
 toml = "*"
-"unstructured.paddleocr" = "*"
-unstructured = {extras = ["all-docs"], version = "*"}
-uvicorn = {extras = ["standard"], version = "*"}
 black = "*"
-
-[dev-packages]
+pytest = "*"
 
 [requires]
 python_version = "3.12"
